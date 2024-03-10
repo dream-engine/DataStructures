@@ -21,7 +21,7 @@ extension ArrayQuestionsProtocol {
     }
 }
 
-// MARK: DSArray
+
 class DSArray: ArrayQuestionsProtocol {
     
     // MARK: 1: Two Sum 1
@@ -102,8 +102,8 @@ class DSArray: ArrayQuestionsProtocol {
     /// Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
     /// The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
     /// Time Complexity: O(n)
-    /// Space Complexity: O(n)
-    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) { // LC88
+    /// Space Complexity: O(1)
+    func merge88(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) { // LC88
         var i = m - 1
         var j = n - 1
         var k = nums1.count - 1
@@ -126,6 +126,49 @@ class DSArray: ArrayQuestionsProtocol {
             k -= 1
         }
         
+    }
+    
+    // MARK: 27: Remove Element
+    /// Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+    ///
+    /// Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+    ///
+    /// Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
+    /// Return k.
+    ///
+    /// int[] nums = [...]; // Input array
+    /// int val = ...; // Value to remove
+    /// int[] expectedNums = [...]; // The expected answer with correct length.
+                                // It is sorted with no values equaling val.
+
+    /// int k = removeElement(nums, val); // Calls your implementation
+
+    /// assert k == expectedNums.length;
+    /// sort(nums, 0, k); // Sort the first k elements of nums
+    /// for (int i = 0; i < actualLength; i++) {
+    ///     assert nums[i] == expectedNums[i];
+    /// }
+    ///
+    /// Input: nums = [3,2,2,3], val = 3
+    /// Output: 2, nums = [2,2,_,_]
+    /// Explanation: Your function should return k = 2, with the first two elements of nums being 2.
+    /// It does not matter what you leave beyond the returned k (hence they are underscores).
+    ///
+    func removeElement27(_ nums: inout [Int], _ val: Int) -> Int {
+        var i = 0
+        var j = 0
+        
+        while i < nums.count {
+            if nums[i] == val {
+                
+            } else {
+                nums[j] = nums[i]
+                j += 1
+            }
+            i += 1
+        }
+        
+        return j
     }
     
 }
