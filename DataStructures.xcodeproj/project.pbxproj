@@ -16,6 +16,9 @@
 		E647BB192B9E19CB00340AF0 /* DataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E647BB182B9E19CB00340AF0 /* DataStructuresTests.swift */; };
 		E647BB232B9E19CB00340AF0 /* DataStructuresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E647BB222B9E19CB00340AF0 /* DataStructuresUITests.swift */; };
 		E647BB252B9E19CB00340AF0 /* DataStructuresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E647BB242B9E19CB00340AF0 /* DataStructuresUITestsLaunchTests.swift */; };
+		E647BB352B9E1A0700340AF0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E647BB342B9E1A0700340AF0 /* Array.swift */; };
+		E69D26802B9E1A7D0026C8E4 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D267F2B9E1A7D0026C8E4 /* Root.swift */; };
+		E69D26832B9E25280026C8E4 /* DSLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D26822B9E25280026C8E4 /* DSLinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		E647BB1E2B9E19CB00340AF0 /* DataStructuresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructuresUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E647BB222B9E19CB00340AF0 /* DataStructuresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresUITests.swift; sourceTree = "<group>"; };
 		E647BB242B9E19CB00340AF0 /* DataStructuresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E647BB342B9E1A0700340AF0 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		E69D267F2B9E1A7D0026C8E4 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		E69D26822B9E25280026C8E4 /* DSLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,8 @@
 		E647BB012B9E19C800340AF0 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				E69D267D2B9E1A690026C8E4 /* Code */,
+				E647BB312B9E19D300340AF0 /* DS */,
 				E647BB022B9E19C800340AF0 /* DataStructuresApp.swift */,
 				E647BB042B9E19C800340AF0 /* ContentView.swift */,
 				E647BB062B9E19CB00340AF0 /* Assets.xcassets */,
@@ -131,6 +139,47 @@
 				E647BB242B9E19CB00340AF0 /* DataStructuresUITestsLaunchTests.swift */,
 			);
 			path = DataStructuresUITests;
+			sourceTree = "<group>";
+		};
+		E647BB312B9E19D300340AF0 /* DS */ = {
+			isa = PBXGroup;
+			children = (
+				E69D26812B9E25170026C8E4 /* LinkedList */,
+				E647BB332B9E19F900340AF0 /* Array */,
+			);
+			path = DS;
+			sourceTree = "<group>";
+		};
+		E647BB332B9E19F900340AF0 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				E647BB342B9E1A0700340AF0 /* Array.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		E69D267D2B9E1A690026C8E4 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				E69D267E2B9E1A6F0026C8E4 /* Root */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		E69D267E2B9E1A6F0026C8E4 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E69D267F2B9E1A7D0026C8E4 /* Root.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		E69D26812B9E25170026C8E4 /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				E69D26822B9E25280026C8E4 /* DSLinkedList.swift */,
+			);
+			path = LinkedList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69D26832B9E25280026C8E4 /* DSLinkedList.swift in Sources */,
 				E647BB0C2B9E19CB00340AF0 /* Persistence.swift in Sources */,
+				E647BB352B9E1A0700340AF0 /* Array.swift in Sources */,
 				E647BB0F2B9E19CB00340AF0 /* DataStructures.xcdatamodeld in Sources */,
 				E647BB052B9E19C800340AF0 /* ContentView.swift in Sources */,
 				E647BB032B9E19C800340AF0 /* DataStructuresApp.swift in Sources */,
+				E69D26802B9E1A7D0026C8E4 /* Root.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

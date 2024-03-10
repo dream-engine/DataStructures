@@ -15,6 +15,9 @@ struct DataStructuresApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onAppear {
+                    
+                }
         }
     }
 }
