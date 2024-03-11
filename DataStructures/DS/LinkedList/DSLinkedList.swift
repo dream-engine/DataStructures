@@ -109,6 +109,9 @@ class DSLinkedList {
     /// Floyd's cycle detection algorithm: It has two parts, we need only first part for this question
     ///  1st part: To prove that it has a cycle
     ///  2nd part:  Find out the starting point of the cycle
+    ///
+    /// Time Complexity: O(n)
+    /// Space Complexity: O(1)
     func hasCycle141(_ head: ListNode?) -> Bool {
         if head == nil { return false }
         
@@ -125,5 +128,34 @@ class DSLinkedList {
         }
         
         return false
+    }
+    
+    // MARK: 203: Remove LL Elements
+    /// Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
+    ///
+    /// Example 1:
+    /// Input: head = [1,2,6,3,4,5,6], val = 6
+    /// Output: [1,2,3,4,5]
+    ///
+    /// Time Complexity: O(n)
+    /// Space Complexity: O(1)
+    func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
+        
+        var current: ListNode? = ListNode(-1)
+        current?.next = head
+        
+        var temp = current
+        
+        while temp != nil {
+            let next = temp?.next
+            
+            if next?.val == val {
+                temp?.next = next?.next
+            } else {
+                temp = temp?.next
+            }
+        }
+        
+        return current?.next
     }
 }
