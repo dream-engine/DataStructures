@@ -73,6 +73,7 @@ class DSLinkedList {
         return result?.next
     }
     
+    // MARK: 83: Delete Duplicates
     /// Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
     ///
     /// Example 1:
@@ -84,7 +85,7 @@ class DSLinkedList {
     /// Output: [1,2,3]
     ///
     /// Time Complexity: O(n)
-    /// Space Complexity: O(1) 
+    /// Space Complexity: O(1)
     func deleteDuplicates83(_ head: ListNode?) -> ListNode? {
         if head == nil { return nil }
         
@@ -102,5 +103,27 @@ class DSLinkedList {
         
         return head
         
+    }
+    
+    // MARK: 141: Has Cycle
+    /// Floyd's cycle detection algorithm: It has two parts, we need only first part for this question
+    ///  1st part: To prove that it has a cycle
+    ///  2nd part:  Find out the starting point of the cycle
+    func hasCycle141(_ head: ListNode?) -> Bool {
+        if head == nil { return false }
+        
+        var slow = head
+        var fast = head
+        
+        while fast != nil && fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next // Fast will move two times faster
+            
+            if fast === slow { // If fast and slow are same, has cycle
+                return true
+            }
+        }
+        
+        return false
     }
 }
