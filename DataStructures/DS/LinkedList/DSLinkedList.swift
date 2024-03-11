@@ -39,7 +39,7 @@ class DSLinkedList {
     ///
     /// Time Complexity: O(n)
     /// Space Complexity: O(1)
-    func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
+    func mergeTwoLists21(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
         if list1 == nil && list2 == nil { return nil }
         
         var l1 = list1
@@ -71,5 +71,36 @@ class DSLinkedList {
         }
         
         return result?.next
+    }
+    
+    /// Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+    ///
+    /// Example 1:
+    /// Input: head = [1,1,2]
+    /// Output: [1,2]
+    ///
+    /// Example 2:
+    /// Input: head = [1,1,2,3,3]
+    /// Output: [1,2,3]
+    ///
+    /// Time Complexity: O(n)
+    /// Space Complexity: O(1) 
+    func deleteDuplicates83(_ head: ListNode?) -> ListNode? {
+        if head == nil { return nil }
+        
+        var current = head
+        
+        while current != nil {
+            let next = current?.next
+            
+            if next?.val == current?.val {
+                current?.next = next?.next
+            } else {
+                current = current?.next
+            }
+        }
+        
+        return head
+        
     }
 }
