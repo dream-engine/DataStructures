@@ -252,4 +252,34 @@ class DSLinkedList {
         
         return result?.next
     }
+    
+    // MARK: 19: Remove Nth Node from End of List
+    ///Given the head of a linked list, remove the nth node from the end of the list and return its head.
+    ///Input: head = [1,2,3,4,5], n = 2
+    ///Output: [1,2,3,5]
+    ///Time Complexity: O(n)
+    ///Space Complexity: O(1)
+    func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
+        if head == nil { return nil }
+        var result: ListNode? = ListNode(-1)
+        result?.next = head
+        
+        var p = result
+        var q = result
+        
+        // Move q n times forward
+        for _ in 0...n {
+            q = q?.next
+        }
+        
+        // Move both p and qa until end
+        while q != nil {
+            q = q?.next
+            p = p?.next
+        }
+        
+        // remove target
+        p?.next = p?.next?.next
+        return result?.next
+    }
 }
